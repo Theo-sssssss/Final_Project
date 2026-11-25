@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nuts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Low BMI Individuals -->
+    
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li><a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('BMI') }}">BMI Calculator</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../static/img/recipe-bg1.jpeg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 36px; "><q>Personalized-Dietary: Magic of Diet !</q></h1> 
+                    <br>
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; ">Discover the magic of personalized dietary management! By tailoring your diet to your BMI and unique needs, we empower you to achieve your health goals effectively. Whether you're aiming for weight loss, maintenance, or overall well-being, our personalized solutions guide you toward success. Experience the transformative power of personalized nutrition for a healthier, happier you!</span>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+
+    <!--Section About Us Start-->
+    <center>
+        <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="aboutusdiv fade-up  col-sm-6">
+                    <figure><img class="aboutusimg" src="../static/img/recipe-bg2.jpeg" alt=""></figure>
+                </div>
+                <div class="col-sm-6 fade-up  textdiv">
+                    <br>
+                    <span id="AboutUsHeader">Your BMI is {{ user_bmi['bmi'] }}</span><br>
+                    <h3>Healthy Diet, Healthy Life !</h3>
+                    <br>
+                        <p>Understanding the importance of personalized nutrition tailored to your BMI is key to achieving optimal health. Your BMI provides valuable insights into your body composition and weight management needs. By customizing dietary recommendations according to your BMI, we can help you make informed choices that support your wellness journey. Whether your goal is weight loss, weight maintenance, or overall health improvement, our personalized approach ensures that you receive targeted support to reach your objectives effectively and sustainably. Let us guide you towards a healthier, happier lifestyle through tailored dietary solutions.</p>
+                    <br>
+                    <hr class="mx-5"><br>
+                    <h3>Categories</h3><br>
+                    <div class="col-sm-12 listAboutUs">
+                        <ul class="listAboutUs1">
+                            <li id="method1">Breakfast</li>
+                            <li id="method2">Lunch</li>
+                            <li id="method3">Dinner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+
+    <center>
+
+        <div class="container service-container-card m-4" id="food1">
+            <h1 style="font-family: 'Acme', sans-serif;">Breakfast</h1>
+
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+        
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/breakfast1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Content</h2>
+                            <p class="card-text">{{ meal_options[0]['content']}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/breakfast2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition Analysis</h2>
+                            <p class="card-text">{{ meal_options[0]['nutrition']}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/breakfast3.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Tips</h2>
+                            <p class="card-text">
+                                {{ meal_options[0]['tips']}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food2">
+            <h1 style="font-family: 'Acme', sans-serif;">Lunch</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/lunch1.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Content</h2>
+                            <p class="card-text">{{ meal_options[1]['content']}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/lunch2.jpeg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition Analysis</h2>
+                            <p class="card-text">{{ meal_options[1]['nutrition']}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/lunch3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Tips</h2>
+                            <p class="card-text">
+                                {{ meal_options[1]['tips']}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food3">
+            <h1 style="font-family: 'Acme', sans-serif;">Dinner</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/dinner1.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Content</h2>
+                            <p class="card-text">
+                                {{ meal_options[2]['content']}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/dinner3.jpeg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition Analysis</h2>
+                            <p class="card-text">
+                                {{ meal_options[2]['nutrition']}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/dinner2.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Tips</h2>
+                            <p class="card-text">
+                                {{ meal_options[2]['tips']}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </center>
+
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divBerry">
+        <div class="container">
+            <div class="row makeapprow fade-up">
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body MakeAppTxtall">
+                            <h6 class="card-title MakeAppTxt1">Revealing the Wonders of Nature's Bounty: Where Magic Awaits</h6>
+                            <h1 class="card-title MakeAppTxt2">Embrace Health with Nuts Enchantment!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body" style="text-align: center;">
+                            <button class="btnuser">Let's See</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+        <center>
+
+            <!--  -->
+            <span class="HowItWorksHeader" id="nutrition-span1">
+                 {{ meal_options[0]['calories']}} calories /  meal
+            </span>
+            <h6 class="Proheader" id="nutrition-title1">Nutritions Facts for Breakfast</h6>
+            <div class="container" style="padding-top: 100px;" id="nutrition1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming {{ meal_options[0]['swimming_time']}} mins</h5>
+                                <p class="card-text">Protein {{ meal_options[0]['protein']}} g / meal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging {{ meal_options[0]['jogging_time']}} mins</h5>
+                                <p class="card-text">Fats {{ meal_options[0]['fats']}} g / meal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling {{ meal_options[0]['cycling_time']}} mins</h5>
+                                <p class="card-text">Fiber {{ meal_options[0]['fiber']}} g / meal</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking {{ meal_options[0]['walking_time']}} mins</h5>
+                                <p class="card-text">Carbs {{ meal_options[0]['carbs']}} g / meal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span2">
+                {{ meal_options[1]['calories']}} calories /  meal
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title2">Nutritions Facts for Lunch</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition2">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein {{ meal_options[1]['protein']}} g /  meal</h5>
+                                <p class="card-text">Swimming {{ meal_options[1]['swimming_time']}} mins. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats {{ meal_options[1]['fats']}} g /  meal</h5>
+                                <p class="card-text">Jogging {{ meal_options[1]['jogging_time']}} mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber {{ meal_options[1]['fiber']}} g /  meal</h5>
+                                <p class="card-text">Cycling {{ meal_options[1]['cycling_time']}} mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs {{ meal_options[1]['carbs']}} g /  meal</h5>
+                                <p class="card-text">Walking {{ meal_options[1]['walking_time']}} mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span3">
+                 calories {{ meal_options[2]['calories']}} / meal
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title3">Nutritions Facts for Dinner</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition3">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming {{ meal_options[2]['swimming_time']}}  mins</h5>
+                                <p class="card-text">Protein {{ meal_options[2]['protein']}} g /  meal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging {{ meal_options[2]['jogging_time']}} mins</h5>
+                                <p class="card-text">Fats {{ meal_options[2]['fats']}} g /  meal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling {{ meal_options[2]['cycling_time']}} mins</h5>
+                                <p class="card-text">Fiber {{ meal_options[2]['fiber']}} g /  meal</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking {{ meal_options[2]['walking_time']}} mins</h5>
+                                <p class="card-text">Carbs {{ meal_options[2]['carbs']}} g /  meal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+        <center>
+            <div class="card text-center border-0 bg-transparent fade-up">
+                <div class="card-body">
+                    <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                    <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+                </div>
+            </div>
+        </center>
+
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 class="footertitle"><span style="color: #f3c600;">Healthy</span>Center</h6>
+                    <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+                        healthier life. We are committed to providing you with comprehensive health solutions, from
+                        personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+                        therapy and mental health support. Our team of professionals is dedicated to delivering the
+                        highest quality of service to you. Here, you'll find a warm community that supports you in
+                        achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+                        overall quality of life. Let's embark on this journey to wellness together, injecting more
+                        vitality and happiness into your physical and mental well-being!</ad>
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Weight Loss Program</a></li>
+                        <li><a href="#">Sports Schedule</a></li>
+                        <li><a href="#">Personalized Nutrition</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('BMI') }}">BMI Calculator</a></li>
+                        <li><a href="#">Food Recognition</a></li>
+                        <li><a href="#">Personalized Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+                        <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Footer End-->
+    <script src="../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var method1 = document.getElementById("method1");
+            var method2 = document.getElementById("method2");
+            var method3 = document.getElementById("method3");
+
+            var food1 = document.getElementById("food1");
+            var food2 = document.getElementById("food2");
+            var food3 = document.getElementById("food3");
+
+            var nutrition1 = document.getElementById("nutrition1");
+            var nutrition2 = document.getElementById("nutrition2");
+            var nutrition3 = document.getElementById("nutrition3");
+
+
+            var nutritionTitle1 = document.getElementById("nutrition-title1");
+            var nutritionTitle2 = document.getElementById("nutrition-title2");
+            var nutritionTitle3 = document.getElementById("nutrition-title3");
+
+            var nutritionSpan1 = document.getElementById("nutrition-span1");
+            var nutritionSpan2 = document.getElementById("nutrition-span2");
+            var nutritionSpan3 = document.getElementById("nutrition-span3");
+
+            method1.addEventListener("click", function () {
+                food2.classList.add("hidden");
+                food3.classList.add("hidden");
+                food1.classList.remove("hidden");
+
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition1.classList.remove("hidden");
+
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle1.classList.remove("hidden");
+
+
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan1.classList.remove("hidden");
+            });
+
+            method2.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food3.classList.add("hidden");
+                food2.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition2.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle2.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan2.classList.remove("hidden");
+            });
+
+            method3.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food2.classList.add("hidden");
+                food3.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.remove("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

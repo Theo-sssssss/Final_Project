@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <style>
+    .change-text{
+      font-size: 16px;
+      position: absolute;
+      {#margin-top: 10px;#}
+      right: 100px;
+      margin-right: 10px;
+      font-family: 'Acme', sans-serif;
+    }
+    .btn-change{
+      cursor: pointer;
+      position: absolute;
+      {#margin-top: 12px;#}
+      height: 20px;
+      width: 20px;
+      right: 80px;
+    }
+    .input-container {
+      text-align: center;
+    }
+
+    .input-field-container {
+      position: relative;
+
+    }
+
+    .input-field {
+      margin-bottom: 20px;
+      margin-right: 368px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      font-size: 16px;
+      width: 280px;
+      transition: all 0.3s;
+      /* Add transition for smooth animation */
+    }
+
+    .input-field::-webkit-inner-spin-button,
+    .input-field::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .input-field:focus {
+      outline: none;
+    }
+
+    .input-field:focus+.input-label {
+      transform: translateY(-120%) translateX(10px);
+      /* Adjust translateY value for higher positioning */
+      font-size: 12px;
+      background-color: #f5f5f5;
+    }
+
+    .input-label {
+      position: absolute;
+      top: 14px;
+      left: 10px;
+      font-size: 16px;
+      color: #999;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+
+    .input-btn {
+      margin-right: 350px;
+      background-color: #f8d348;
+      color: #f5f5f5;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .bmi-result {
+      margin-right: 350px;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Navbar Start-->
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container-fluid container">
+      <a class="navbar-brand" href="index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+              <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('recommend') }}">Personalized  Dietary</a>
+                    </li>
+            <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                    </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar End-->
+  <!--Welcome Section Start-->
+  <section class="healthywelcome" style="background-image: url(../static/img/BMI-bg1.jpeg);">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="rowuser no-gutters slider-text align-items-center">
+        <div class="col-lg-6 text">
+          <span style="font-family: 'Acme', sans-serif; font-size: 20px; "> <q>Discover Your Path to Wellness:
+              Understanding Your BMI.</q></span>
+          <h1 style="font-family: 'Acme', sans-serif; font-size: 40px; ">Unlocking Health Insights: Exploring Your Body
+            Mass Index</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!--Welcome Section End-->
+  <center>
+    <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <div class="row">
+        <div class="aboutusdiv fade-up  col-sm-6">
+          <figure><img class="aboutusimg" src="../static/img/BMI-bg2.jpeg" alt=""></figure>
+        </div>
+        <div class="col-sm-6 fade-up  textdiv">
+          <br>
+          <span id="AboutUsHeader">Body Mass Index </span><br>
+          <h3>BMI Tracker: Measure Your Health</h3>
+          <br>
+          <p style="font-family: 'Acme', sans-serif;;">The BMI is a convenient rule of thumb used to broadly categorize
+            a person as based on tissue mass (muscle, fat, and bone) and height. Major adult BMI classifications are
+            underweight (under 18.5 kg/m2), normal weight (18.5 to 24.9), overweight (25 to 29.9), and obese (30 or
+            more). When used to predict an individual's health, rather than as a statistical measurement for groups, the
+            BMI has limitations that can make it less useful than some of the alternatives, especially when applied to
+            individuals with abdominal obesity, short stature, or high muscle mass.</p>
+          <br>
+          <hr class="mx-5"><br>
+
+          <h3>Get Your BMI Now !</h3><br>
+          <div class="col-sm-12 listAboutUs">
+
+ <div class="input-container">
+    <div class="input-field-container">
+        <input type="number" class="input-field" id="weight1" placeholder="" step="0.01">
+        <label class="input-label" for="weight1">Enter your weight (kg)</label>
+    </div>
+
+    <div class="input-container hidden" id="secondInputContainer">
+        <div class="input-field-container">
+            <input type="number" class="input-field" id="height" placeholder="" step="0.01">
+            <label class="input-label" for="height">Enter your height (cm)</label>
+        </div>
+    </div>
+    <button type="button" class="input-btn" id="submitButton" onclick="validateInputs()"  onclick="addInput()" >Continue</button>
+</div>
+
+          </div>
+        </div>
+      </div>
+        </div>
+  </center>
+  <!--Section About Us End-->
+  <br><br>
+  <!--Section Our Services Start-->
+  <center>
+
+     <div class="container service-container-card m-4 underweight-container" style="display: none; position: relative;">
+          <h1 style="font-family: 'Acme', sans-serif;">Your Recipes</h1>
+          <div> <span class="change-text" >Not satisfied? Get another batch!</span><img class="btn-change" src="../static/img/change.png" alt="Change" onclick="showMore()" ></div>
+          <br>
+          <div class="row row-cols-1 service-row-card row-cols-md-3 g-4 bmi-recipe">
+
+          <div class="col service-big-card fade-up" style="display: none;" >
+              <a href="{{ url_for('render_recipe', recipe_name='Nuts') }}">
+               <div class="card  rounded-0 service-card h-100">
+                 <img src="../static/img/nuts-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                 <div class="card-body service-text-bmi">
+                   <h2 class="card-title">Nuts</h2>
+                   <p class="card-text">Nuts, with their satisfying crunch and rich flavor, are a nutritional treasure trove.
+                     Loaded with heart-healthy fats, protein, and fiber, they offer a satisfying snack that supports muscle
+                     growth and aids digestion. Their abundance of antioxidants, including vitamin E, provides protection
+                     against cellular damage, promoting overall well-being.</p>
+                   <button class="btn-service-bmi"> Learn More</button>
+                 </div>
+               </div>
+              </a>
+             </div>
+
+          <div class="col service-big-card fade-up" style="display: none;">
+              <a href="{{ url_for('render_recipe', recipe_name='Beef') }}">
+                <div class="card  rounded-0 service-card h-100">
+                  <img src="../static/img/steak-BMI.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                  <div class="card-body service-text-bmi">
+                    <h2 class="card-title">Beef</h2>
+                    <p class="card-text">Beef, a beloved dietary staple, provides essential nutrients for health. Rich in
+                      protein, iron, and zinc, it supports muscle growth, oxygen transport, and immune function. Opting for
+                      lean cuts and moderation ensures enjoyment of beef's nutritional benefits without compromising heart
+                      health. Its savory taste and versatility make it a favorite choice.</p>
+                    <button class="btn-service-bmi"> Learn More</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Soybean') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/soy-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Soybean</h2>
+              <p class="card-text">Soybeans, known for their versatility and health benefits, are a plant-based protein
+                powerhouse. Packed with essential nutrients like iron, calcium, and magnesium, they promote bone health
+                and bolster the immune system. Soybeans also contain isoflavones, offering potential benefits for heart
+                health and menopausal symptoms.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+           </a>
+          </div>
+
+          <div class="col service-big-card fade-up" style="display: none;">
+            <a href="{{ url_for('render_recipe', recipe_name='Avocado') }}">
+             <div class="card  rounded-0 service-card h-100" >
+               <img src="../static/img/avocado-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+               <div class="card-body service-text-bmi">
+                 <h2 class="card-title">Avocado</h2>
+                 <p class="card-text">Avocados, known for their buttery texture and delicate flavor, are a nutritional gem. Abundant in heart-healthy monounsaturated fats, fiber, and vitamins, they offer a wholesome addition to any meal. Their richness in antioxidants, such as vitamin E and lutein, supports skin health and enhances vision, contributing to overall vitality.</p>
+                 <button class="btn-service-bmi"> Learn More</button>
+               </div>
+             </div>
+            </a>
+           </div>
+
+         <div class="col service-big-card fade-up" style="display: none;">
+           <a href="{{ url_for('render_recipe', recipe_name='Cheese') }}">
+             <div class="card  rounded-0 service-card h-100">
+               <img src="../static/img/cheese-BMI.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+               <div class="card-body service-text-bmi">
+                 <h2 class="card-title">Cheese</h2>
+                 <p class="card-text">Cheese, celebrated for its rich flavor and creamy texture, is a nutritional powerhouse. Packed with essential nutrients like calcium, protein, and phosphorus, it provides a satisfying indulgence that aids in muscle repair and bone strength. Its diverse range of flavors and textures adds depth to various dishes, making it a versatile ingredient cherished by many.</p>
+                 <button class="btn-service-bmi"> Learn More</button>
+               </div>
+             </div>
+           </a>
+         </div>
+
+         <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Egg') }}">
+            <div class="card  rounded-0 service-card h-100" >
+              <img src="../static/img/egg-bg1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Egg</h2>
+                <p class="card-text">Eggs, with their versatile nature and nutrient-rich profile, are a culinary delight. Boasting a balance of heart-healthy fats, high-quality protein, and essential vitamins, they serve as a nourishing choice that supports muscle development and enhances satiety. Their array of nutrients, including vitamin D and choline, contribute to overall wellness by promoting bone health and cognitive function.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+
+    <div class="container service-container-card m-4 normal-weight-container" style="display: none;">
+      <h1 style="font-family: 'Acme', sans-serif;">Recipes for Normal Weight</h1>
+  <div>
+        <span class="change-text">Not satisfied? Get another batch!</span>
+        <img class="btn-change" src="../static/img/change.png" alt="Change" onclick="showMoreNormalWeight()">
+    </div>
+      <br>
+      <!-- Add recipes for normal weight category here -->
+      <div class="row row-cols-1 service-row-card row-cols-md-3 g-4 normal-weight-recipe">
+
+        <div class="col service-big-card fade-up" style="display: none" >
+         <a href="{{ url_for('render_recipe', recipe_name='Nuts') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/nuts-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Nuts</h2>
+              <p class="card-text">Nuts, with their satisfying crunch and rich flavor, are a nutritional treasure trove.
+                Loaded with heart-healthy fats, protein, and fiber, they offer a satisfying snack that supports muscle
+                growth and aids digestion. Their abundance of antioxidants, including vitamin E, provides protection
+                against cellular damage, promoting overall well-being.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+         </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none">
+          <a href="{{ url_for('render_recipe', recipe_name='Beef') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/steak-BMI.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Beef</h2>
+                <p class="card-text">Beef, a beloved dietary staple, provides essential nutrients for health. Rich in
+                  protein, iron, and zinc, it supports muscle growth, oxygen transport, and immune function. Opting for
+                  lean cuts and moderation ensures enjoyment of beef's nutritional benefits without compromising heart
+                  health. Its savory taste and versatility make it a favorite choice.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+ <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Egg') }}">
+            <div class="card  rounded-0 service-card h-100" >
+              <img src="../static/img/egg-bg1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Egg</h2>
+                <p class="card-text">Eggs, with their versatile nature and nutrient-rich profile, are a culinary delight. Boasting a balance of heart-healthy fats, high-quality protein, and essential vitamins, they serve as a nourishing choice that supports muscle development and enhances satiety. Their array of nutrients, including vitamin D and choline, contribute to overall wellness by promoting bone health and cognitive function.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+    <div class="col service-big-card fade-up" style="display: none;">
+            <a href="{{ url_for('render_recipe', recipe_name='Avocado') }}">
+             <div class="card  rounded-0 service-card h-100" >
+               <img src="../static/img/avocado-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+               <div class="card-body service-text-bmi">
+                 <h2 class="card-title">Avocado</h2>
+                 <p class="card-text">Avocados, known for their buttery texture and delicate flavor, are a nutritional gem. Abundant in heart-healthy monounsaturated fats, fiber, and vitamins, they offer a wholesome addition to any meal. Their richness in antioxidants, such as vitamin E and lutein, supports skin health and enhances vision, contributing to overall vitality.</p>
+                 <button class="btn-service-bmi"> Learn More</button>
+               </div>
+             </div>
+            </a>
+           </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Berry') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/blueberries-box2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Berry</h2>
+                <p class="card-text">Berries, cherished for their vibrant colors and refreshing flavors, are nutritional powerhouses that offer a myriad of health benefits. Packed with essential nutrients such as antioxidants, vitamins, and minerals, they contribute to overall well-being. Berries are particularly rich in antioxidants like anthocyanins, which help combat oxidative stress and inflammation in the body, promoting heart health and reducing the risk of chronic diseases.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Banana') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/banana-divbg.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Banana</h2>
+              <p class="card-text">Bananas, nature's convenient and nutrient-rich gift, are beloved staples in many diets worldwide, offering a host of essential nutrients for optimal health. Bursting with potassium, an electrolyte crucial for maintaining fluid balance, nerve function, and muscle contractions, bananas support heart health and help regulate blood pressure</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+        </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container service-container-card m-4 overweight-container" style="display: none;"F>
+      <h1 style="font-family: 'Acme', sans-serif;">Recipes for Overweight</h1>
+         <div>
+        <span class="change-text">Not satisfied? Get another batch!</span>
+        <img class="btn-change" src="../static/img/change.png" alt="Change" onclick="showMoreOverweight()">
+    </div>
+      <br>
+      <!-- Add recipes for overweight category here -->
+      <div class="row row-cols-1 service-row-card row-cols-md-3 g-4 overweight-recipe">
+
+        <div class="col service-big-card fade-up" style="display: none">
+         <a href="{{ url_for('render_recipe', recipe_name='Fish') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/fish-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Fish</h2>
+              <p class="card-text">Fish, with its delicate flavor and versatile culinary applications, is a nutritional powerhouse that offers a plethora of health benefits. Renowned for its heart-healthy omega-3 fatty acids, fish serves as a vital source of essential nutrients that support overall well-being. Rich in high-quality protein, fish provides the building blocks for muscle repair and growth,
+                  making it a valuable addition to any diet aimed at enhancing strength and vitality.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+         </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Broccoli') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/broccoli-bg1jpg.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Broccoli</h2>
+                <p class="card-text">Broccoli, often celebrated as the 'crown jewel' of cruciferous vegetables, is a nutritional powerhouse that boasts an impressive array of health-promoting properties. With its vibrant green hue and distinctive shape, broccoli adds both visual appeal and nutritional value to any meal. Packed with vitamins, minerals, and phytonutrients, broccoli is a versatile and delicious addition to a balanced diet.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='cucumber') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/cucumber-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Cucumber</h2>
+              <p class="card-text">Cucumbers, with their crisp texture and refreshing flavor, are a hydrating and nutritious addition to any diet. Often enjoyed fresh in salads, sandwiches, or as a crunchy snack, cucumbers offer a wealth of health benefits along with their delightful taste. Composed of over 95% water, cucumbers are an excellent source of hydration, aiding in the maintenance of healthy skin, digestion, and overall well-being.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+        </a>
+        </div>
+
+             <div class="col service-big-card fade-up" style="display: none;">
+         <a href="{{ url_for('render_recipe', recipe_name='Nuts') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/nuts-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Nuts</h2>
+              <p class="card-text">Nuts, with their satisfying crunch and rich flavor, are a nutritional treasure trove.
+                Loaded with heart-healthy fats, protein, and fiber, they offer a satisfying snack that supports muscle
+                growth and aids digestion. Their abundance of antioxidants, including vitamin E, provides protection
+                against cellular damage, promoting overall well-being.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+         </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Potato') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/Potatoes-divbg.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Potato</h2>
+                <p class="card-text">Potatoes, often hailed as the ultimate comfort food, are a versatile and nutrient-dense staple enjoyed by people worldwide. With their humble origins and wide-ranging culinary possibilities, potatoes offer a host of health benefits along with their delicious taste and satisfying texture. Rich in carbohydrates, potatoes serve as an excellent source of energy, providing fuel for both physical and mental activities.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col service-big-card fade-up"style="display: none;"  >
+          <div class="card  rounded-0 service-card h-100">
+               <a href="{{ url_for('render_recipe', recipe_name='Soybean') }}">
+            <img src="../static/img/soy-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Soybean</h2>
+              <p class="card-text">Soybeans, known for their versatility and health benefits, are a plant-based protein
+                powerhouse. Packed with essential nutrients like iron, calcium, and magnesium, they promote bone health
+                and bolster the immune system. Soybeans also contain isoflavones, offering potential benefits for heart
+                health and menopausal symptoms.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container service-container-card m-4 obese-container" style="display: none;">
+      <h1 style="font-family: 'Acme', sans-serif;">Recipes for Obese</h1>
+        <div>
+        <span class="change-text">Not satisfied? Get another batch!</span>
+        <img class="btn-change" src="../static/img/change.png" alt="Change" onclick="showMoreObese()">
+    </div>
+      <br>
+      <!-- Add recipes for obese category here -->
+      <div class="row row-cols-1 service-row-card row-cols-md-3 g-4 obese-recipe">
+
+              <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Broccoli') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/broccoli-bg1jpg.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Broccoli</h2>
+                <p class="card-text">Broccoli, often celebrated as the 'crown jewel' of cruciferous vegetables, is a nutritional powerhouse that boasts an impressive array of health-promoting properties. With its vibrant green hue and distinctive shape, broccoli adds both visual appeal and nutritional value to any meal. Packed with vitamins, minerals, and phytonutrients, broccoli is a versatile and delicious addition to a balanced diet.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+    <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Potato') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/Potatoes-divbg.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Potato</h2>
+                <p class="card-text">Potatoes, often hailed as the ultimate comfort food, are a versatile and nutrient-dense staple enjoyed by people worldwide. With their humble origins and wide-ranging culinary possibilities, potatoes offer a host of health benefits along with their delicious taste and satisfying texture. Rich in carbohydrates, potatoes serve as an excellent source of energy, providing fuel for both physical and mental activities.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+    <div class="col service-big-card fade-up" style="display: none">
+         <a href="{{ url_for('render_recipe', recipe_name='Fish') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/fish-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Fish</h2>
+              <p class="card-text">Fish, with its delicate flavor and versatile culinary applications, is a nutritional powerhouse that offers a plethora of health benefits. Renowned for its heart-healthy omega-3 fatty acids, fish serves as a vital source of essential nutrients that support overall well-being. Rich in high-quality protein, fish provides the building blocks for muscle repair and growth,
+                  making it a valuable addition to any diet aimed at enhancing strength and vitality.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+         </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+              <a href="{{ url_for('render_recipe', recipe_name='Soybean') }}">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/soy-BMI.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text-bmi">
+              <h2 class="card-title">Soybean</h2>
+              <p class="card-text">Soybeans, known for their versatility and health benefits, are a plant-based protein
+                powerhouse. Packed with essential nutrients like iron, calcium, and magnesium, they promote bone health
+                and bolster the immune system. Soybeans also contain isoflavones, offering potential benefits for heart
+                health and menopausal symptoms.</p>
+              <button class="btn-service-bmi"> Learn More</button>
+            </div>
+          </div>
+            </a>
+        </div>
+
+        <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Berry') }}">
+            <div class="card  rounded-0 service-card h-100">
+              <img src="../static/img/blueberries-box2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Berry</h2>
+                <p class="card-text">Berries, cherished for their vibrant colors and refreshing flavors, are nutritional powerhouses that offer a myriad of health benefits. Packed with essential nutrients such as antioxidants, vitamins, and minerals, they contribute to overall well-being. Berries are particularly rich in antioxidants like anthocyanins, which help combat oxidative stress and inflammation in the body, promoting heart health and reducing the risk of chronic diseases.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+         <div class="col service-big-card fade-up" style="display: none;">
+          <a href="{{ url_for('render_recipe', recipe_name='Egg') }}">
+            <div class="card  rounded-0 service-card h-100" >
+              <img src="../static/img/egg-bg1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+              <div class="card-body service-text-bmi">
+                <h2 class="card-title">Egg</h2>
+                <p class="card-text">Eggs, with their versatile nature and nutrient-rich profile, are a culinary delight. Boasting a balance of heart-healthy fats, high-quality protein, and essential vitamins, they serve as a nourishing choice that supports muscle development and enhances satiety. Their array of nutrients, including vitamin D and choline, contribute to overall wellness by promoting bone health and cognitive function.</p>
+                <button class="btn-service-bmi"> Learn More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </center>
+  <!--Section Our Services End-->
+
+  <!--Section Make Appointment Start-->
+  <div class="divMakeAppoint">
+    <div class="container">
+      <div class="row makeapprow fade-up">
+        <div class="col-sm-6">
+          <div class="card bg-transparent border-0">
+            <div class="card-body MakeAppTxtall">
+              <h6 class="card-title MakeAppTxt1">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+              <h1 class="card-title MakeAppTxt2">Get Health and Instruction with BMI calculator.</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card bg-transparent border-0">
+            <div class="card-body" style="text-align: center;">
+              <button class="btnuser"> Let's Try</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Section Make Appointment End-->
+
+  <!--Procedure Section Start-->
+  <div style="font-family: 'Acme', sans-serif;">
+    <center>
+      <h6 class="Proheader">Procedure</h6>
+      <span class="HowItWorksHeader">Keep fit with BMI?</span>
+      <div class="container" style="padding-top: 100px;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col  fade-up">
+            <div class="card border-0 bg-transparent h-100">
+              <div class="proimg" style="background-image: url(../static/img/pro1.jpg);">
+                <div class="num">
+                  1
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title pt-3 pb-3">Understanding BMI Index</h5>
+                <p class="card-text"> Learn about BMI, a measure of body health based on height and weight proportions,
+                  to kickstart your fitness journey. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col  fade-up">
+            <div class="card border-0 bg-transparent h-100">
+              <div class="proimg" style="background-image: url(../static/img/pro2.jpg);">
+                <div class="num">
+                  2
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title pt-3 pb-3">Grasping BMI Ranges</h5>
+                <p class="card-text">Know where you stand within BMI categories—underweight, normal, overweight, or
+                  obese—to guide your health goals effectively.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col  fade-up">
+            <div class="card border-0 bg-transparent h-100">
+              <div class="proimg" style="background-image: url(../static/img/pro3.jpg);">
+                <div class="num">
+                  3
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title pt-3 pb-3">Setting Personalized Health Goals</h5>
+                <p class="card-text">Tailor health objectives according to your BMI, health status, and aspirations for
+                  sustainable lifestyle changes.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col  fade-up">
+            <div class="card border-0 bg-transparent h-100">
+              <div class="proimg" style="background-image: url(../static/img/pro4.jpg);">
+                <div class="num">
+                  4
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title pt-3 pb-3">Taking Action</h5>
+                <p class="card-text">Act on your health goals through collaboration with professionals, customized
+                  plans, progress tracking, and persistent efforts towards a healthier you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+  </div>
+  <!--Procedure Section End-->
+
+  <!--Last Section Start-->
+  <div class="lastSection">
+    <center>
+      <div class="card text-center border-0 bg-transparent fade-up">
+        <div class="card-body">
+          <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+          <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+        </div>
+      </div>
+    </center>
+
+  </div>
+  <!--Last Section End-->
+
+  <!--Footer Start-->
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container" style="padding: 30px ;">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+          <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+            healthier life. We are committed to providing you with comprehensive health solutions, from
+            personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+            therapy and mental health support. Our team of professionals is dedicated to delivering the
+            highest quality of service to you. Here, you'll find a warm community that supports you in
+            achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+            overall quality of life. Let's embark on this journey to wellness together, injecting more
+            vitality and happiness into your physical and mental well-being!</ad>
+          </p>
+        </div>
+
+
+
+        <div class="col-xs-6 col-md-3">
+          <h6 class="footerotitle">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">BMI Calculator</a></li>
+            <li><a href="#">Food Recognition</a></li>
+            <li><a href="#">Personalized Recipe</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+            <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--Footer End-->
+  <script src="../static/js/js.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+
+ <script>
+
+ document.addEventListener("DOMContentLoaded", function () {
+    var inputFields = document.querySelectorAll('.input-field');
+    inputFields.forEach(function (inputField) {
+        inputField.addEventListener('focus', moveLabel);
+        inputField.addEventListener('blur', moveLabel);
+        inputField.addEventListener('input', moveLabel);
+
+
+       var savedValue = sessionStorage.getItem(inputField.id);
+        if (savedValue) {
+            inputField.value = savedValue;
+            moveLabel.call(inputField);
+        }
+    });
+
+    var showMoreButtons = document.querySelectorAll('.btn-show-more');
+    showMoreButtons.forEach(function (button) {
+        button.addEventListener('click', showMore);
+    });
+
+    // 检查两个输入框是否都有内容，如果是，则显示下方的输入框和计算 BMI 结果
+    var weight1 = document.getElementById('weight1').value;
+    var height = document.getElementById('height').value;
+    if (weight1 && height) {
+        var secondInputContainer = document.getElementById('secondInputContainer');
+        if (secondInputContainer.classList.contains('hidden')) {
+            secondInputContainer.classList.remove('hidden');
+        }
+        displayBMI(calculateBMI(weight1, height / 100));
+    }
+});
+
+function moveLabel() {
+    var label = this.parentNode.querySelector('.input-label');
+    console.log("moveLabel called: ", this.id);  // Log which input is calling the function
+
+    // Check both the presence of value and whether the input is focused
+    if (this.value || document.activeElement === this) {
+        label.style.transform = 'translateY(-120%) translateX(10px)';
+        label.style.fontSize = '12px';
+        label.style.color = '#222529';
+        label.style.backgroundColor = '#f5f5f5';
+        console.log("Label moved for:", this.id); // Confirm label movement
+    } else {
+        label.style.transform = 'none';
+        label.style.fontSize = '16px';
+        label.style.color = '#999';
+        label.style.backgroundColor = 'transparent'; // Ensure visibility on no input
+    }
+    sessionStorage.setItem(this.id, this.value);
+}
+
+
+function addInput() {
+    var weight1 = document.getElementById('weight1').value;
+    if (!weight1) {
+        alert('Please fill in your weight');
+        return;
+    }
+
+    var secondInputContainer = document.getElementById('secondInputContainer');
+    if (secondInputContainer.classList.contains('hidden')) {
+        secondInputContainer.classList.remove('hidden');
+        return; // Return without further processing if height input is not visible yet
+    }
+
+    var heightInput = document.getElementById('height');
+    var height = heightInput.value;
+    if (!height) {
+        alert('Please fill in your height');
+        return;
+    }
+
+    // Convert height from cm to meters
+    var heightMeters = height / 100;
+
+    // Calculate BMI
+    var result = calculateBMI(weight1, heightMeters);
+
+    // Display BMI
+    displayBMI(result);
+
+    // Send data to server to save height, weight, and BMI
+    saveUserData(weight1, height, result);
+}
+
+function calculateBMI(weight, height) {
+    var bmi = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
+    return bmi.toFixed(2);
+}
+
+function displayBMI(bmi) {
+    var inputContainer = document.querySelector('.input-container');
+    var existingBMIResult = document.querySelector('.bmi-result');
+    if (existingBMIResult) {
+        inputContainer.removeChild(existingBMIResult);
+    }
+    var bmiResult = document.createElement('div');
+    bmiResult.className = 'bmi-result';
+    var interpretation = interpretBMI(bmi);
+    bmiResult.textContent = 'Your BMI is: ' + bmi + ', ' + interpretation;
+
+    // Hide all containers
+    var allContainers = document.querySelectorAll('.service-container-card');
+    allContainers.forEach(function (container) {
+        container.style.display = 'none';
+        // Hide all cards in each container
+        var cards = container.querySelectorAll('.service-big-card');
+        cards.forEach(function(card) {
+            card.style.display = 'none';
+        });
+    });
+
+    // Show the corresponding container based on BMI category
+    var containerToShow = getContainerByBMI(interpretation);
+    if (containerToShow) {
+        containerToShow.style.display = 'block';
+        // Randomly select three cards to display
+        var cards = containerToShow.querySelectorAll('.service-big-card');
+        var selectedCards = getRandomCards(cards, 3);
+        // Display the selected cards
+        selectedCards.forEach(function (card) {
+            card.style.display = 'block';
+        });
+    }
+
+    inputContainer.appendChild(bmiResult);
+}
+
+function interpretBMI(bmi) {
+    if (bmi < 18.5) {
+        return 'Underweight';
+    } else if (bmi < 24.9) {
+        return 'Normal weight';
+    } else if (bmi < 29.9) {
+        return 'Overweight';
+    } else {
+        return 'Obese';
+    }
+}
+
+function getContainerByBMI(bmiCategory) {
+    switch (bmiCategory) {
+        case 'Underweight':
+            return document.querySelector('.underweight-container');
+        case 'Normal weight':
+            return document.querySelector('.normal-weight-container');
+        case 'Overweight':
+            return document.querySelector('.overweight-container');
+        case 'Obese':
+            return document.querySelector('.obese-container');
+        default:
+            return null;
+    }
+}
+
+function getRandomCards(cards, count) {
+    var shuffledCards = Array.from(cards).sort(() => 0.5 - Math.random());
+    return shuffledCards.slice(0, count);
+}
+
+function showMore() {
+    var container = document.querySelector('.service-container-card:not([style="display: none;"])');
+    var cards = container.querySelectorAll('.service-big-card');
+    var hiddenCards = Array.from(cards).filter(function (card) {
+        return card.style.display === 'none';
+    });
+    var selectedCards = hiddenCards.slice(0, 3);
+
+    // Hide all cards
+    cards.forEach(function (card) {
+        card.style.display = 'none';
+    });
+
+    // Display the selected cards
+    selectedCards.forEach(function (card) {
+        card.style.display = 'block';
+    });
+}
+
+function showMoreOverweight() {
+    var container = document.querySelector('.overweight-container:not([style="display: none;"])');
+    var cards = container.querySelectorAll('.service-big-card');
+    var hiddenCards = Array.from(cards).filter(function(card) {
+        return card.style.display === 'none';
+    });
+    var selectedCards = getRandomCards(hiddenCards, 3);
+
+    // Hide all cards
+    cards.forEach(function(card) {
+        card.style.display = 'none';
+    });
+
+    // Display the selected cards
+    selectedCards.forEach(function(card) {
+        card.style.display = 'block';
+    });
+}
+
+function showMoreObese() {
+    var container = document.querySelector('.obese-container:not([style="display: none;"])');
+    var cards = container.querySelectorAll('.service-big-card');
+    var hiddenCards = Array.from(cards).filter(function(card) {
+        return card.style.display === 'none';
+    });
+    var selectedCards = getRandomCards(hiddenCards, 3);
+
+    // Hide all cards
+    cards.forEach(function(card) {
+        card.style.display = 'none';
+    });
+
+    // Display the selected cards
+    selectedCards.forEach(function(card) {
+        card.style.display = 'block';
+    });
+}
+
+
+function showMoreNormalWeight() {
+    var container = document.querySelector('.normal-weight-container:not([style="display: none;"])');
+    var cards = container.querySelectorAll('.service-big-card');
+    var hiddenCards = Array.from(cards).filter(function(card) {
+        return card.style.display === 'none';
+    });
+    var selectedCards = getRandomCards(hiddenCards, 3);
+
+    // Hide all cards
+    cards.forEach(function(card) {
+        card.style.display = 'none';
+    });
+
+    // Display the selected cards
+    selectedCards.forEach(function(card) {
+        card.style.display = 'block';
+    });
+}
+function saveUserData(weight, height, bmi) {
+    // Prepare data to send to server
+    var userData = {
+        weight: weight,
+        height: height,
+        bmi: bmi
+    };
+
+    // Send Ajax POST request to server
+    fetch('/saveUserData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('User data saved successfully');
+        } else {
+            console.error('Failed to save user data');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+
+function validateInputs() {
+    var weight = document.getElementById('weight1');
+    var height = document.getElementById('height');
+
+    if (weight.value < 0) {
+        weight.value = ''; // Clear the input field
+        alert('Invalid Weight'); // Show an alert message
+        return; // Stop further processing
+    }
+
+    if (height.value < 0) {
+        height.value = ''; // Clear the input field
+        alert('Invalid Height'); // Show an alert message
+        return; // Stop further processing
+    }
+
+    // If all validations pass
+    addInput(); // Proceed with your addInput function or any other logic
+}
+
+</script>
+ {% if info %}
+        <script>alert("{{ info }}");</script>
+    {% endif %}
+</body>
+
+</html>

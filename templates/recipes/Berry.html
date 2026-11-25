@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+   <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
+    <link rel="stylesheet" href="../../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- High BMI Individuals -->
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="../index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href={{ url_for('BMI') }}>BMI Calculator</a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../../static/img/berries-bg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 36px; "><q>Berry Bonanza: A Nutrient-Packed Delight</q></h1> 
+                    <br>
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; ">Welcome to Berry Bonanza, where we uncover the nutritional wonders of berries. From strawberries to blueberries, discover their vibrant flavors and health-boosting benefits in every bite. Let's dive into the berrylicious journey together!</span>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+
+    <!--Section About Us Start-->
+    <center>
+        <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="aboutusdiv fade-up  col-sm-6">
+                    <figure><img class="aboutusimg" src="../../static/img/berry-bg2.jpg" alt=""></figure>
+                </div>
+                <div class="col-sm-6 fade-up  textdiv">
+                    <br>
+                    <span id="AboutUsHeader">Berry</span><br>
+                    <h3>Exploring the Vibrant World of Berries and Their Health Benefits</h3>
+                    <br>
+                    <p>Berries aren't just tasty; they're nutritional powerhouses. Blueberries enhance cognition, strawberries are aggregate fruits, raspberries protect the heart, blackberries aid digestion, and cranberries prevent UTIs. Enjoy their flavor-packed goodness and health benefits!</p>
+                    <br>
+                    <hr class="mx-5"><br>
+                    <h3>Categories</h3><br>
+                    <div class="col-sm-12 listAboutUs">
+                        <ul class="listAboutUs1">
+                            <li id="method1">Blueberriess</li>
+                            <li id="method2">Raspberries</li>
+                            <li id="method3">Strawberries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+
+    <center>
+        <div class="container service-container-card m-4" id="food1">
+            <h1 style="font-family: 'Acme', sans-serif;">Blueberries</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+        
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/blueberries-box1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">Blueberries, the small, round fruits celebrated for their sweet-tart flavor, hail from various plant species within the Rubus genus of the rose family. Perennial in nature, these berries are perennial with woody stems, showcasing their resilience and enduring presence in gardens and natural habitats.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/blueberries-box2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">Blueberries are small, round berries with a deep blue-purple hue and a sweet, juicy flavor. They are often referred to as "brain berries" due to their high antioxidant content, particularly anthocyanins, which may help improve cognitive function and protect against age-related cognitive decline.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/blueberries-box3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Blueberries are ideal for individuals with a high BMI aiming to shed pounds. Low in calories and rich in fiber, they promote fullness and reduce overall calorie intake, aiding weight loss. Their antioxidants, notably anthocyanins, may mitigate inflammation and enhance insulin sensitivity, potentially curbing fat storage and improving blood sugar control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food2">
+            <h1 style="font-family: 'Acme', sans-serif;">Raspberries</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/raspberries1.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">Raspberries, the delectable fruits cherished worldwide, stem from various plant species within the Rubus genus of the rose family, primarily found in the subgenus Idaeobatus. Notably, the term "raspberry" encompasses both the fruit and the plants bearing them. Perennial by nature, raspberries boast woody stems, contributing to their enduring presence and culinary versatility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/raspberries2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">Raspberries are small, red berries with a tart and slightly sweet flavor. They are rich in anthocyanins, the compounds responsible for their vibrant color and potent antioxidant properties. Raspberries are known for their potential anti-inflammatory effects and cardiovascular benefits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/raspberries3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Raspberries are a smart choice for high BMI individuals seeking weight loss. Their high fiber content and low calorie profile foster satiety and diminish calorie consumption, supporting weight management. The antioxidants in raspberries, including anthocyanins, may combat inflammation and bolster metabolic health, aiding in effective weight control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food3">
+            <h1 style="font-family: 'Acme', sans-serif;">Strawberries</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/strawberry1.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">Strawberries, the sweet, heart-shaped fruits, belong to the Fragaria genus. They're not true berries but aggregate fruits with seeds on the outside. These perennials spread via runners, ensuring their widespread cultivation and culinary popularity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/strawberry2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">Strawberries are bright red, heart-shaped berries with a sweet and juicy flavor. They are unique among berries as their seeds are on the outside rather than the inside. Strawberries are rich in vitamin C, manganese, and antioxidants such as ellagic acid and flavonoids, which contribute to their numerous health benefits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/strawberry3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Strawberries offer benefits to those with a high BMI striving to lose weight. Low in calories and high in water content, they satisfy hunger and hydrate without excess calories. Their fiber aids digestion and fullness, while antioxidants like ellagic acid and flavonoids improve metabolic health, potentially aiding weight loss by reducing inflammation and enhancing insulin sensitivity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divBerry">
+        <div class="container">
+            <div class="row makeapprow fade-up">
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body MakeAppTxtall">
+                            <h6 class="card-title MakeAppTxt1">Unveiling Berry Mysteries: Where Magic Abounds</h6>
+                            <h1 class="card-title MakeAppTxt2">Get Healthy and Berry On!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body" style="text-align: center;">
+                            <button class="btnuser"> Let's See</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+        <center>
+
+
+            <span class="HowItWorksHeader" id="nutrition-span1">
+                57 calories / 100 g
+            </span>
+            <h6 class="Proheader" id="nutrition-title1">Nutritions Facts for Blueberries</h6>
+            <div class="container" style="padding-top: 100px;" id="nutrition1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming 5 mins</h5>
+                                <p class="card-text">Protein 0.7 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging 7 mins</h5>
+                                <p class="card-text">Fats 0.3 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling 9 mins</h5>
+                                <p class="card-text">Fiber 2.4 g / 100 g</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking 16 mins</h5>
+                                <p class="card-text">Carbs 14.5 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span2">
+                52 calories / 100 g
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title2">Nutritions Facts for Raspberries</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition2">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein 1.2 g / 100 g </h5>
+                                <p class="card-text">Swimming 4 mins. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats 0.7 g / 100 g</h5>
+                                <p class="card-text">Jogging 6 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber 6.5 g / 100g</h5>
+                                <p class="card-text">Cycling 8 mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs 11.9 g / 100g</h5>
+                                <p class="card-text">Walking 14 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span3">
+                32 calories / 100 g
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title3">Nutritions Facts for Strawberries</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition3">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein 0.7 g / 100g </h5>
+                                <p class="card-text">Swimming 3 mins. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats 0.3 g / 100g</h5>
+                                <p class="card-text">Jogging 4 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber 2 g / 100g</h5>
+                                <p class="card-text">Cycling 5 mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs 7.7 g / 100g</h5>
+                                <p class="card-text">Walking 9 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+        <center>
+            <div class="card text-center border-0 bg-transparent fade-up">
+                <div class="card-body">
+                    <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                    <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+                </div>
+            </div>
+        </center>
+
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+                    <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+                        healthier life. We are committed to providing you with comprehensive health solutions, from
+                        personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+                        therapy and mental health support. Our team of professionals is dedicated to delivering the
+                        highest quality of service to you. Here, you'll find a warm community that supports you in
+                        achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+                        overall quality of life. Let's embark on this journey to wellness together, injecting more
+                        vitality and happiness into your physical and mental well-being!</ad>
+                    </p>
+                </div>
+
+
+
+ <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href={{ url_for('BMI') }}>BMI Calculator</a></li>
+                        <li><a href="{{ url_for('recognition') }}">Food Recongtion</a></li>
+                        <li><a href="{{ url_for('recommend') }}">Personalized Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+                        <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var method1 = document.getElementById("method1");
+            var method2 = document.getElementById("method2");
+            var method3 = document.getElementById("method3");
+
+            var food1 = document.getElementById("food1");
+            var food2 = document.getElementById("food2");
+            var food3 = document.getElementById("food3");
+
+            var nutrition1 = document.getElementById("nutrition1");
+            var nutrition2 = document.getElementById("nutrition2");
+            var nutrition3 = document.getElementById("nutrition3");
+
+
+            var nutritionTitle1 = document.getElementById("nutrition-title1");
+            var nutritionTitle2 = document.getElementById("nutrition-title2");
+            var nutritionTitle3 = document.getElementById("nutrition-title3");
+
+            var nutritionSpan1 = document.getElementById("nutrition-span1");
+            var nutritionSpan2 = document.getElementById("nutrition-span2");
+            var nutritionSpan3 = document.getElementById("nutrition-span3");
+
+            method1.addEventListener("click", function () {
+                food2.classList.add("hidden");
+                food3.classList.add("hidden");
+                food1.classList.remove("hidden");
+
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition1.classList.remove("hidden");
+
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle1.classList.remove("hidden");
+
+
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan1.classList.remove("hidden");
+            });
+
+            method2.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food3.classList.add("hidden");
+                food2.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition2.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle2.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan2.classList.remove("hidden");
+            });
+
+            method3.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food2.classList.add("hidden");
+                food3.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.remove("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

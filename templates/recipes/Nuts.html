@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nuts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+   <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
+    <link rel="stylesheet" href="../../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Low BMI Individuals -->
+    
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="../index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li><a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('BMI') }}">BMI Calculator</a>
+                    </li>
+                        <li>
+              <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('login') }}">Login</a>
+            </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../../static/img/Nuts-bg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 36px; "><q>Nutritional Gems for the Lean</q></h1> 
+                    <br>
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; ">Welcome to our exploration of nuts, the powerhouse snacks ideal for those with a lean BMI. In this guide, we uncover the nutritional wonders of nuts and their role in providing essential nutrients and energy for individuals with lower body mass indexes. Let's embark on a journey to discover how nuts can be a satisfying and nourishing addition to your daily diet, supporting your health and well-being along the ways!</span>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+    <!--Section About Us Start-->
+    <center>
+        <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="aboutusdiv fade-up  col-sm-6">
+                    <figure><img class="aboutusimg" src="../../static/img/Nuts-bg2.jpeg" alt=""></figure>
+                </div>
+                <div class="col-sm-6 fade-up  textdiv">
+                    <br>
+                    <span id="AboutUsHeader">Nuts</span><br>
+                    <h3>Understanding Nuts: Culinary vs. Botanical Perspectives</h3>
+                    <br>
+                    <p>
+                        A nut comprises a kernel encased in a hard or tough shell, typically edible. While various dry seeds are colloquially referred to as nuts in culinary terms, botanically, the term "nut" indicates that the shell remains closed, enclosing the seed.</p>
+                    <br>
+                    <hr class="mx-5"><br>
+                    <h3>Categories</h3><br>
+                    <div class="col-sm-12 listAboutUs">
+                        <ul class="listAboutUs1">
+                            <li id="method1">Almonds</li>
+                            <li id="method2">Cashew</li>
+                            <li id="method3">Walnuts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+
+    <center>
+        <div class="container service-container-card m-4" id="food1">
+            <h1 style="font-family: 'Acme', sans-serif;">Almonds</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+        
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/almonds1.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">The almond tree, cultivated globally for its seeds, is part of the Prunus genus. Almonds are drupes with a hard shell enclosing the seed. They're used in various cuisines, notably desserts like marzipan. Originating from Iran, almonds were domesticated in the Early Bronze Age and spread across Mediterranean climates. California produces over half of the world's almonds, but sustainability concerns arise due to high water demand and pesticides, exacerbated by droughts and climate change.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/almonds2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">The almond fruit, a drupe, features a thick, leathery hull containing a woody shell called the pyrena, housing the edible seed or nut. As the fruit matures, the hull splits from the shell, facilitating the fruit's release from the tree. This process ensures the dissemination of almonds, contributing to their cultivation and consumption.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/almonds4.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Almonds are rich in healthy fats, protein, fiber, and essential nutrients like vitamin E, magnesium, calcium, and zinc. For those with a low BMI, they offer sustained energy, satiety, and support normal bodily functions. Additionally, almonds contain antioxidants that promote cell health and immune function.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food2">
+            <h1 style="font-family: 'Acme', sans-serif;">Cashew</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/cashew1.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">
+                                Cashew trees yield both nuts and apples. Nuts are edible, used in snacks or recipes, while apples are processed into drinks or liquor. Global production in 2019 hit four million tonnes, led by Ivory Coast and India. Cashew shells find industrial applications, and the apple juice is utilized in beverages or spirits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/cashew2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">The cashew tree's true fruit is a kidney-shaped or boxing glove-shaped drupe, growing at the end of the cashew apple. Initially, the drupe develops on the tree, and later, the pedicel expands to form the cashew apple. The drupe matures into the true fruit, a single shell-encased seed, often referred to as a nut in culinary contexts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/cashew3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Cashews are rich in healthy fats, protein, fiber, and essential nutrients like vitamin E, magnesium, copper, and zinc. They provide sustained energy, promote satiety, and support metabolism. Cashews contain antioxidants that reduce oxidative stress and boost immune function.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food3">
+            <h1 style="font-family: 'Acme', sans-serif;">Walnuts</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/walnuts1.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">Walnuts, scientifically known as Juglans regia, are versatile nuts renowned for their rich flavor and nutritional benefits. They belong to the Juglandaceae family and are native to regions of Central Asia, the Mediterranean, and North America. With their distinct taste and crunchy texture, walnuts are a popular addition to various culinary dishes worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/walnuts2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">Walnuts are the seeds of the Juglans regia tree, encased in a hard, wrinkled shell. They have a unique kidney shape with a ridged surface. The inner kernel of the walnut is light in color and has a rich, nutty flavor. The outer shell is typically removed before consumption, revealing the edible nut inside. Walnuts are commonly consumed raw, roasted, or incorporated into both sweet and savory recipes, adding a delightful crunch and flavor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/walnuts3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">Walnuts are a highly nutritious nut, rich in healthy fats, protein, fiber, vitamins, and minerals. They are an excellent source of omega-3 fatty acids, which promote heart health and reduce inflammation. Additionally, walnuts provide essential nutrients like vitamin E, B vitamins, magnesium, and phosphorus, supporting overall well-being. Despite being calorie-dense, they make a satisfying and nutritious snack option as part of a balanced diet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divNuts">
+        <div class="container">
+            <div class="row makeapprow fade-up">
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body MakeAppTxtall">
+                            <h6 class="card-title MakeAppTxt1">Revealing the Wonders of Nature's Bounty: Where Magic Awaits</h6>
+                            <h1 class="card-title MakeAppTxt2">Embrace Health with Nuts Enchantment!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body" style="text-align: center;">
+                            <button class="btnuser">Let's See</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+        <center>
+
+
+            <span class="HowItWorksHeader" id="nutrition-span1">
+                556 calories / 100 g
+            </span>
+            <h6 class="Proheader" id="nutrition-title1">Nutritions Facts for Almonds</h6>
+            <div class="container" style="padding-top: 100px;" id="nutrition1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming 48 mins</h5>
+                                <p class="card-text">Protein 21.3 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging 66 mins</h5>
+                                <p class="card-text">Fats 50.6 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling 88 mins</h5>
+                                <p class="card-text">Fiber 11.8 g / 100 g</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking 161 mins</h5>
+                                <p class="card-text">Carbs 19.7 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span2">
+                552 calories / 100 g
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title2">Nutritions Facts for Cashews</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition2">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein 18.2 g / 100 g </h5>
+                                <p class="card-text">Swimming 46 mins. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats 43.9 g / 100 g</h5>
+                                <p class="card-text">Jogging 63 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber 3.3 g / 100g</h5>
+                                <p class="card-text">Cycling 85 mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs 30.2 g / 100g</h5>
+                                <p class="card-text">Walking 154 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span3">
+                653 calories / 100 g
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title3">Nutritions Facts for Walnuts</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition3">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein 15.2 g / 100g </h5>
+                                <p class="card-text">Swimming 55 mins. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats 65.2 g / 100g</h5>
+                                <p class="card-text">Jogging 75 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber 6.7 g / 100g</h5>
+                                <p class="card-text">Cycling 100 mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs 13.7 g / 100g</h5>
+                                <p class="card-text">Walking 182 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+        <center>
+            <div class="card text-center border-0 bg-transparent fade-up">
+                <div class="card-body">
+                    <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                    <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+                </div>
+            </div>
+        </center>
+
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+                    <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+                        healthier life. We are committed to providing you with comprehensive health solutions, from
+                        personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+                        therapy and mental health support. Our team of professionals is dedicated to delivering the
+                        highest quality of service to you. Here, you'll find a warm community that supports you in
+                        achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+                        overall quality of life. Let's embark on this journey to wellness together, injecting more
+                        vitality and happiness into your physical and mental well-being!
+                    </p>
+                </div>
+
+
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Quick Links</h6>
+                    <ul class="footer-links">
+                         <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href={{ url_for('BMI') }}>BMI Calculator</a></li>
+                        <li><a href="{{ url_for('recognition') }}">Food Recongtion</a></li>
+                        <li><a href="{{ url_for('recommend') }}">Personalized Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+                        <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var method1 = document.getElementById("method1");
+            var method2 = document.getElementById("method2");
+            var method3 = document.getElementById("method3");
+
+            var food1 = document.getElementById("food1");
+            var food2 = document.getElementById("food2");
+            var food3 = document.getElementById("food3");
+
+            var nutrition1 = document.getElementById("nutrition1");
+            var nutrition2 = document.getElementById("nutrition2");
+            var nutrition3 = document.getElementById("nutrition3");
+
+
+            var nutritionTitle1 = document.getElementById("nutrition-title1");
+            var nutritionTitle2 = document.getElementById("nutrition-title2");
+            var nutritionTitle3 = document.getElementById("nutrition-title3");
+
+            var nutritionSpan1 = document.getElementById("nutrition-span1");
+            var nutritionSpan2 = document.getElementById("nutrition-span2");
+            var nutritionSpan3 = document.getElementById("nutrition-span3");
+
+            method1.addEventListener("click", function () {
+                food2.classList.add("hidden");
+                food3.classList.add("hidden");
+                food1.classList.remove("hidden");
+
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition1.classList.remove("hidden");
+
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle1.classList.remove("hidden");
+
+
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan1.classList.remove("hidden");
+            });
+
+            method2.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food3.classList.add("hidden");
+                food2.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition3.classList.add("hidden");
+                nutrition2.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle3.classList.add("hidden");
+                nutritionTitle2.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan3.classList.add("hidden");
+                nutritionSpan2.classList.remove("hidden");
+            });
+
+            method3.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food2.classList.add("hidden");
+                food3.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition2.classList.add("hidden");
+                nutrition3.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle2.classList.add("hidden");
+                nutritionTitle3.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan2.classList.add("hidden");
+                nutritionSpan3.classList.remove("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

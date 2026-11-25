@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+   <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
+    <link rel="stylesheet" href="../../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstaticomc." crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- High BMI Individuals -->
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="../index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href={{ url_for('BMI') }}>BMI Calculator</a>
+                    </li>
+                        <li>
+              <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('login') }}">Login</a>
+            </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../../static/img/banana-bg1.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 36px; "><q>Berry Bonanza: A Nutrient-Packed Delight</q></h1> 
+                    <br>
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; ">Welcome to Berry Bonanza, where we uncover the nutritional wonders of berries. From strawberries to blueberries, discover their vibrant flavors and health-boosting benefits in every bite. Let's dive into the berrylicious journey together!</span>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+
+    <!--Section About Us Start-->
+    <center>
+        <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="aboutusdiv fade-up  col-sm-6">
+                    <figure><img class="aboutusimg" src="../../static/img/banana-bg2.jpg" alt=""></figure>
+                </div>
+                <div class="col-sm-6 fade-up  textdiv">
+                    <br>
+                    <span id="AboutUsHeader">Banana</span><br>
+                    <h3>Exploring the Vibrant World of Berries and Their Health Benefits</h3>
+                    <br>
+                    <p>Berries aren't just tasty; they're nutritional powerhouses. Blueberries enhance cognition, strawberries are aggregate fruits, raspberries protect the heart, blackberries aid digestion, and cranberries prevent UTIs. Enjoy their flavor-packed goodness and health benefits!</p>
+                    <br>
+                    <hr class="mx-5"><br>
+                    <h3>Menu</h3><br>
+                    <div class="col-sm-12 listAboutUs">
+                        <ul class="listAboutUs1">
+                            <li id="method1">Banana Milkshake</li>
+                            <li id="method2">Tropical Fruit Salad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+
+    <center>
+        <div class="container service-container-card m-4" id="food1">
+            <h1 style="font-family: 'Acme', sans-serif;">Banana Milkshake</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+        
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/banana-milkshake1.jpeg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Step1</h2>
+                            <p class="card-text"> Begin by adding 2 ripe bananas. Optionally, include 20 to 24 cashews for added protein. You may skip cashews or substitute them with 2 tablespoons of nut butter or 6 scoops of vanilla ice cream. Cashews lend a rich and creamy texture to the shake. Optionally, soak them for 3 to 4 hours for added health benefits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/banana-milkshake2.jpeg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Step2</h2>
+                            <p class="card-text">Skip this step if using ice cream. Sweeten the shake according to your taste preference with sugar or honey, typically around 2 tablespoons. Alternatively, opt for 4 pitted dates for natural sweetness. Be cautious, as excess dates can alter the shake's color. Enhance the flavor with ½ teaspoon of ground cinnamon or ¼ teaspoon of cardamom powder.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/banana-milkshake3.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Step3</h2>
+                            <p class="card-text">Pour in 1½ cups of chilled milk. If incorporating ice cream, reduce the milk to half a cup. Blend all ingredients until a smooth consistency is achieved. Adjust the thickness by adding more milk for a thinner shake or additional bananas for a thicker texture.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service-container-card m-4 hidden" id="food2">
+            <h1 style="font-family: 'Acme', sans-serif;">Tropical Fruit Salad</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/tropical-salad1.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Ingredients</h2>
+                            <p class="card-text">1 pineapple, cut into bite-sized pieces, 1 papaya, cut into bite-sized pieces, 1 mango, cut into bite-sized pieces, 1 banana cut into bite-sized pieces</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/tropical-salad2.jpeg" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Step1</h2>
+                            <p class="card-text">Arrange fresh fruit in a bowl. Mix flavor enhancer ingredients until honey dissolves, then pour over the fruit and gently stir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../../static/img/tropical-salad3.jpeg" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Step2</h2>
+                            <p class="card-text">Portion fruit into small bowls, garnish with toasted coconut, and serve promptly.                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </center>
+
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divBanana">
+        <div class="container">
+            <div class="row makeapprow fade-up">
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body MakeAppTxtall">
+                            <h6 class="card-title MakeAppTxt1">Unveiling Banana Mysteries: Where Magic Abounds</h6>
+                            <h1 class="card-title MakeAppTxt2">Get Healthy and Banana On!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body" style="text-align: center;">
+                            <button class="btnuser"> Let's See</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+        <center>
+
+
+            <span class="HowItWorksHeader" id="nutrition-span1">
+                45 calories / 100 g
+            </span>
+            <h6 class="Proheader" id="nutrition-title1">Nutritions Facts for Banana Milkshake</h6>
+            <div class="container" style="padding-top: 100px;" id="nutrition1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming 5 mins</h5>
+                                <p class="card-text">Protein 3 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging 7 mins</h5>
+                                <p class="card-text">Fats 0.4 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling 9 mins</h5>
+                                <p class="card-text">Fiber 2.4 g / 100 g</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking 16 mins</h5>
+                                <p class="card-text">Carbs 5 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="HowItWorksHeader hidden" id="nutrition-span2">
+                86 calories / 100 g
+            </span>
+            <h6 class="Proheader hidden" id="nutrition-title2">Nutritions Facts for Tropical Fruit Salad</h6>
+            <div class="container hidden" style="padding-top: 100px;" id="nutrition2">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Protein 0.4 g / 100 g </h5>
+                                <p class="card-text">Swimming 7 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fats 0.1 g / 100 g</h5>
+                                <p class="card-text">Jogging 10 mins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Fiber 1.3 g / 100g</h5>
+                                <p class="card-text">Cycling 13 mins</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Carbs 22.4 g / 100g</h5>
+                                <p class="card-text">Walking 24 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+        <center>
+            <div class="card text-center border-0 bg-transparent fade-up">
+                <div class="card-body">
+                    <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                    <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+                </div>
+            </div>
+        </center>
+
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+                    <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+                        healthier life. We are committed to providing you with comprehensive health solutions, from
+                        personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+                        therapy and mental health support. Our team of professionals is dedicated to delivering the
+                        highest quality of service to you. Here, you'll find a warm community that supports you in
+                        achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+                        overall quality of life. Let's embark on this journey to wellness together, injecting more
+                        vitality and happiness into your physical and mental well-being!
+                    </p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Quick Links</h6>
+                   <ul class="footer-links">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href={{ url_for('BMI') }}>BMI Calculator</a></li>
+                        <li><a href="{{ url_for('recognition') }}">Food Recongtion</a></li>
+                        <li><a href="{{ url_for('recommend') }}">Personalized Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+                        <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var method1 = document.getElementById("method1");
+            var method2 = document.getElementById("method2");
+            // var method3 = document.getElementById("method3");
+
+            var food1 = document.getElementById("food1");
+            var food2 = document.getElementById("food2");
+            // var food3 = document.getElementById("food3");
+
+            var nutrition1 = document.getElementById("nutrition1");
+            var nutrition2 = document.getElementById("nutrition2");
+            // var nutrition3 = document.getElementById("nutrition3");
+
+
+            var nutritionTitle1 = document.getElementById("nutrition-title1");
+            var nutritionTitle2 = document.getElementById("nutrition-title2");
+            // var nutritionTitle3 = document.getElementById("nutrition-title3");
+
+            var nutritionSpan1 = document.getElementById("nutrition-span1");
+            var nutritionSpan2 = document.getElementById("nutrition-span2");
+            // var nutritionSpan3 = document.getElementById("nutrition-span3");
+
+            method1.addEventListener("click", function () {
+                food2.classList.add("hidden");
+                // food3.classList.add("hidden");
+                food1.classList.remove("hidden");
+
+                nutrition2.classList.add("hidden");
+                // nutrition3.classList.add("hidden");
+                nutrition1.classList.remove("hidden");
+
+                nutritionTitle2.classList.add("hidden");
+                // nutritionTitle3.classList.add("hidden");
+                nutritionTitle1.classList.remove("hidden");
+
+
+                nutritionSpan2.classList.add("hidden");
+                // nutritionSpan3.classList.add("hidden");
+                nutritionSpan1.classList.remove("hidden");
+            });
+
+            method2.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                // food3.classList.add("hidden");
+                food2.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                // nutrition3.classList.add("hidden");
+                nutrition2.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                // nutritionTitle3.classList.add("hidden");
+                nutritionTitle2.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                // nutritionSpan3.classList.add("hidden");
+                nutritionSpan2.classList.remove("hidden");
+            });
+
+            method3.addEventListener("click", function () {
+                food1.classList.add("hidden");
+                food2.classList.add("hidden");
+                // food3.classList.remove("hidden");
+
+                nutrition1.classList.add("hidden");
+                nutrition2.classList.add("hidden");
+                // nutrition3.classList.remove("hidden");
+
+                nutritionTitle1.classList.add("hidden");
+                nutritionTitle2.classList.add("hidden");
+                // nutritionTitle3.classList.remove("hidden");
+
+                nutritionSpan1.classList.add("hidden");
+                nutritionSpan2.classList.add("hidden");
+                // nutritionSpan3.classList.remove("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

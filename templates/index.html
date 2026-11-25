@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- import the bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+          <a class="navbar-brand" href="{{ url_for('index') }}"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="/">Home</a>
+              </li>
+            <li>
+              <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('BMI') }}">BMI Calculator</a>
+            </li>
+                 <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('recommend') }}">Personalized  Dietary</a>
+                    </li>
+            <li>
+              <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="{{ url_for('login') }}">Login</a>
+            </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../static/img/homebg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; "> <q>Let food be thy medicine and medicine be thy food.</q>  – Hippocrates</span>
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 40px; ">Healthy-Center is a website for making you living a healthy life.</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+    <!--Section Serivces Start-->
+    <section class="rowservices">
+      <div class="service-wrap container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row g-gl-1">
+              
+              <div class="col-md d-flex align-items-stretch">
+               
+                <div class="services text-center">
+                  <a href="{{ url_for('recognition') }}" style="display: block; color: #222529;">
+                  <div class="icon"><img src="../static/img/3rdicon.png" height="50" width="50" alt=""></div>
+                    <div class="text">
+                      <h2 class="pb-2">Food Recognition</h2>
+                      <button class="btn-service"> Learn More</button>
+                  </div>
+                </a>
+                </div>   
+              </div>
+              
+              
+              <div class="col-md d-flex align-items-stretch">
+                <div class="services text-center">
+                  <a href="{{ url_for('BMI') }}" style="display: block; color: #222529;">
+                  <div class="icon"><img src="../static/img/calculator.png" height="50" width="50" alt=""></div>
+                    <div class="text" >
+                      <h2 class="pb-2">BMI Calculator</h2>
+                      <button class="btn-service">Learn More</button>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            
+              <div class="col-md d-flex align-items-stretch">
+                <div class="services text-center">
+                  <a href="{{ url_for('recommend') }}" style="display: block; color: #222529;">
+                  <div class="icon"><img src="../static/img/5thicon.png" height="50" width="50" alt=""></div>
+                    <div class="text">
+                      <h2 class="pb-2">Personalized Recipe</h2>
+                      <button class="btn-service"> Learn More</button>
+                </div>
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!--Section Serivces End-->
+    
+    <!--Section About Us Start-->
+    <center><div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <div class="row">
+        <div class="aboutusdiv fade-up  col-sm-6"><figure><img class="aboutusimg" src="../static/img/aboutus.jpg" alt=""></figure></div>
+        <div class="col-sm-6 fade-up  textdiv">
+          <br>
+          <span id="AboutUsHeader">Better Eat , Better Life</span><br>
+          <h3>Food is the paramount necessity of the people.</h3><br>
+          <p>Choosing 'Better Eat, Better Life' means understanding how food shapes our well-being. Opting for nutritious meals enriches our bodies, minds, and spirits. Let's savor each bite, investing in our health and vitality one meal at a time.</p>
+             <br><hr class="mx-5"><br>
+          
+          <h3>We can help you : </h3><br>
+          <div class="col-sm-12 listAboutUs">
+            <ul class="listAboutUs1">
+              <li>Personalized Dietary</li>
+              <li>Food Nutrition Analysis</li>
+              <li>BMI Calculation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div></center>
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+    <center>
+      <div class="container service-container-card m-4">
+        <h1 style="font-family: 'Acme', sans-serif;">Our Services</h1>
+      <br>
+      <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+        <div class="col service-big-card fade-up">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/serviceimg1.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text">
+              <h2 class="card-title">Personalized Dietary</h2>
+              <p class="card-text">Our Weight Loss Program is tailored to your unique needs, offering sustainable solutions for achieving your goals. Combining expert guidance with personalized plans for diet, exercise, and lifestyle adjustments, we ensure you have the tools and support necessary to reach and maintain your ideal weight healthily. With ongoing support and adjustments, we empower you to make lasting changes and achieve success.</p>
+              <button class="btn-service"> Learn More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col service-big-card fade-up">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/serviceimg2.jpg" class="card-img-top serviceimg rounded-0" alt="...">
+            <div class="card-body service-text">
+              <h2 class="card-title">BMI Calculation</h2>
+              <p class="card-text">Optimize your athletic performance with our Sports Schedule program. Designed for athletes and fitness enthusiasts, our personalized training schedules and expert guidance help you enhance strength, endurance, speed, and agility. Tailored to your individual needs and goals, our program empowers you to excel in your sport or fitness activity, maximizing results and supporting long-term athletic development.</p>
+              <button class="btn-service">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <div class="col service-big-card fade-up">
+          <div class="card  rounded-0 service-card h-100">
+            <img src="../static/img/serviceimg3.jpg" class="card-img-top serviceimg  rounded-0" alt="...">
+            <div class="card-body service-text">
+              <h2 class="card-title">Food Nutrition Analysis</h2>
+              <p class="card-text">Embark on a transformative journey to vibrant health with our Personalized Nutrition program. Our tailored dietary plans, expertly crafted to align with your unique needs and goals, cover everything from effective weight management to boosting vitality. With personalized guidance and unwavering support, make informed choices, cultivate lasting habits, and embrace a healthier lifestyle journey tailored exclusively for you.</p>
+              <button class="btn-service"> Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </center>
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divMakeAppoint">
+      <div class="container">
+        <div class="row makeapprow fade-up">
+          <div class="col-sm-6">
+            <div class="card bg-transparent border-0">
+              <div class="card-body MakeAppTxtall">
+                <h6 class="card-title MakeAppTxt1">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                <h1 class="card-title MakeAppTxt2">Get Health and Instruction Coach.</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card bg-transparent border-0">
+              <div class="card-body" style="text-align: center;">
+                <button class="btnuser"> Let's Try</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+      <center>
+        <h6 class="Proheader">Procedure</h6>
+        <span class="HowItWorksHeader">How It Works ?</span>
+        <div class="container" style="padding-top: 100px;">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col  fade-up">
+              <div class="card border-0 bg-transparent h-100">
+                <div class="proimg" style="background-image: url(../static/img/pro1.jpg);">
+                  <div class="num">
+                    1
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pt-3 pb-3">Trusted Services</h5>
+                  <p class="card-text">We believe in the power of health. Our services offer personalized care and expertise in rehabilitation, fitness, and nutrition. With us, you'll receive dedicated support to achieve your wellness goals. Choose us for a healthier life. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col  fade-up">
+              <div class="card border-0 bg-transparent h-100">
+                <div class="proimg" style="background-image: url(../static/img/pro2.jpg);">
+                  <div class="num">
+                    2
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pt-3 pb-3">Personalized Diet</h5>
+                  <p class="card-text">Customize your diet for optimal health. Our experts craft tailored plans to meet your needs, whether it's weight management, performance, or health goals. With personalized guidance, fuel your body with the right nutrition for lasting vitality.</p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col  fade-up">
+              <div class="card border-0 bg-transparent h-100">
+                <div class="proimg" style="background-image: url(../static/img/pro3.jpg);">
+                  <div class="num">
+                    3
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pt-3 pb-3">Routine Exercise</h5>
+                  <p class="card-text">Incorporate regular exercise into your daily life. Consistency is key to improving fitness levels, boosting energy, and maintaining overall health. Whether it's a brisk walk, a gym session, or a yoga class, prioritize movement to feel your best every day </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col  fade-up">
+              <div class="card border-0 bg-transparent h-100">
+                <div class="proimg" style="background-image: url(../static/img/pro4.jpg);">
+                  <div class="num">
+                    4
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pt-3 pb-3">Success/Goal</h5>
+                  <p class="card-text">Set clear goals and work diligently towards achieving them. Success is not just about reaching the destination, but also about the journey. Stay focused, stay motivated, and celebrate each milestone along the way. With determination and perseverance, you can turn your goals into reality </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+      <center>
+        <div class="card text-center border-0 bg-transparent fade-up">
+          <div class="card-body">
+            <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+            <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+          </div>  
+        </div>
+      </center>
+      
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+      <!-- Site footer -->
+      <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6 class="footertitle"><span style="color: #f3c600;">Healthy</span>Center</h6>
+              <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a healthier life. We are committed to providing you with comprehensive health solutions, from personalized nutrition consultations to professional fitness programs, as well as rehabilitation therapy and mental health support. Our team of professionals is dedicated to delivering the highest quality of service to you. Here, you'll find a warm community that supports you in achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your overall quality of life. Let's embark on this journey to wellness together, injecting more vitality and happiness into your physical and mental well-being!</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6 class="footerotitle">Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="BMI.html">BMI Calculator</a></li>
+                <li><a href="#">Food Recognition</a></li>
+                <li><a href="#">Personalized Recipe</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved  
+           <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+              </p>
+            </div>
+          </div>
+        </div>
+  </footer>
+    <!--Footer End-->
+    <script src="../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" 
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  </body>
+</html>

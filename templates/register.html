@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- import the bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+          <a class="navbar-brand" href="index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="/">Home</a>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--Navbar End-->
+    <!--Welcome Section Start-->
+    <section class="healthywelcome" style="background-image: url(../static/img/homebg.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px;"> <q>Let food be thy medicine and medicine be thy food.</q>  – Hippocrates</span>
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 40px; ">Healthy-Center is a website for making you living a healthy life.</h1>
+                </div>
+                <div class="box text">
+
+                  <h2>Create Your Account</h2>
+                    <form id="register-form" action="/register" method="post">
+       <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password"  required >
+            <input type="submit" value="Register" style="font-family: 'Acme', sans-serif; font-size: 20px;  color: #fff;">
+                </form>
+{% if error %}
+                    <div id="error-message" style="color: red; padding-top: 10px;">{{ error }}</div>
+                    {% endif %}
+                  <a href="/login" style="font-family: 'Acme', sans-serif; font-size: 12px;  color: #fff; text-decoration: none; font-weight: 300; padding-left: 120px;">Already Have Account? <span style="color:#ffd103 ;">Log In</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+              <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a healthier life. We are committed to providing you with comprehensive health solutions, from personalized nutrition consultations to professional fitness programs, as well as rehabilitation therapy and mental health support. Our team of professionals is dedicated to delivering the highest quality of service to you. Here, you'll find a warm community that supports you in achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your overall quality of life. Let's embark on this journey to wellness together, injecting more vitality and happiness into your physical and mental well-being!</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6 class="footerotitle">Categories</h6>
+              <ul class="footer-links">
+                <li><a href="#">Weight Loss Program</a></li>
+                <li><a href="#">Sports Schdule</a></li>
+                <li><a href="#">Personalized Nutrition</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6 class="footerotitle">Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="BMI.html">BMI Calculator</a></li>
+                <li><a href="#">Food Recongtion</a></li>
+                <li><a href="#">Personalized Recipe</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved  
+           <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+              </p>
+            </div>
+          </div>
+        </div>
+  </footer>
+    <!--Footer End-->
+    <script src="../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" 
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+  <script>
+$(document).ready(function(){
+    $('#register-form').submit(function(event){
+        // 防止表单提交的默认行为
+        event.preventDefault();
+
+        // 获取用户名和密码
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        // 发送 AJAX 请求
+        $.ajax({
+            url: '/register',
+            method: 'POST',
+            data: {username: username, password: password},
+            success: function(response){
+                // 处理成功响应
+                console.log(response);
+                // 可以根据服务器返回的响应执行适当的操作，比如显示成功消息、重定向等
+            },
+            error: function(xhr, status, error){
+                // 处理错误响应
+                console.error(xhr.responseText);
+                // 可以根据错误信息执行适当的操作，比如显示错误消息
+            }
+        });
+    });
+});
+</script>
+
+  </body>
+</html>

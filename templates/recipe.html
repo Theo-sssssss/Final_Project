@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ predicted_class.replace("_", " ") }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="index.html"><span style="color:#ffd103 ;">Healthy</span>Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link  navlink active" style="color: white;" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link  navlink active" style="color: white;" aria-current="page" href="BMI.html">BMI Calculator</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar End-->
+
+
+    <!--Welcome Section Start-->
+
+    <section class="healthywelcome" style="background-image: url(../static/img/{{ predicted_class_info['bg1'] }}.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="rowuser no-gutters slider-text align-items-center">
+                <div class="col-lg-6 text">
+
+                    <h1 style="font-family: 'Acme', sans-serif; font-size: 36px; "><q>{{ predicted_class_info['title'] }}</q></h1>
+                    <br>
+                    <span style="font-family: 'Acme', sans-serif; font-size: 20px; ">{{ predicted_class_info['intro_top'] }}</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Welcome Section End-->
+
+
+    <!--Section About Us Start-->
+    <center>
+        <div class="container" style="margin-top: 100px; margin-bottom: 15px;">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="aboutusdiv fade-up  col-sm-6">
+                    <figure><img class="aboutusimg" src="../static/img/{{ predicted_class_info['bg2'] }}.jpg" alt=""></figure>
+                </div>
+                <div class="col-sm-6 fade-up  textdiv">
+                    <br>
+                    <span id="AboutUsHeader">{{ predicted_class_info['name'].replace("_", " ") }}</span><br>
+                    <h3>{{ predicted_class_info['sub_title'] }}</h3>
+                    <br>
+                    <p>{{ predicted_class_info['intro'] }}</p>
+                    <br>
+                    <hr class="mx-5"><br>
+{#                    <h3>Do you Know</h3>#}
+                    <div class="col-sm-12 listAboutUs">
+                        {{ predicted_class_info[''] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <!--Section About Us End-->
+    <br><br>
+    <!--Section Our Services Start-->
+    <br><br>
+    <center>
+        <div class="container service-container-card m-4" id="food1">
+
+            <h1 style="font-family: 'Acme', sans-serif;">{{ predicted_class.replace("_", " ") }}</h1>
+            <br>
+            <div class="row row-cols-1 service-row-card row-cols-md-3 g-4">
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/{{ predicted_class_info['desc_bg1'] }}" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Introduction</h2>
+                            <p class="card-text">{{ predicted_class_info['intro'] }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/{{ predicted_class_info['desc_bg2'] }}" class="card-img-top serviceimg rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Description</h2>
+                            <p class="card-text">{{ predicted_class_info['desc'] }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col service-big-card fade-up">
+                    <div class="card  rounded-0 service-card h-100">
+                        <img src="../static/img/{{ predicted_class_info['desc_bg3'] }}" class="card-img-top serviceimg  rounded-0" alt="...">
+                        <div class="card-body service-text">
+                            <h2 class="card-title">Nutrition</h2>
+                            <p class="card-text">{{ predicted_class_info['nutrition'] }}.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </center>
+
+    <!--Section Our Services End-->
+
+    <!--Section Make Appointment Start-->
+    <div class="divBerry">
+        <div class="container">
+            <div class="row makeapprow fade-up">
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body MakeAppTxtall">
+                            <h6 class="card-title MakeAppTxt1">{{ predicted_class.txt1 }}</h6>
+                            <h1 class="card-title MakeAppTxt2">{{ predicted_class.txt2 }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body" style="text-align: center;">
+                            <button class="btnuser"> Let's See</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section Make Appointment End-->
+
+    <!--Procedure Section Start-->
+    <div style="font-family: 'Acme', sans-serif;">
+        <center>
+            <span class="HowItWorksHeader" id="nutrition-span1">
+             {{ predicted_class_info['calories'] }} calories / 100 g
+            </span>
+            <h6 class="Proheader" id="nutrition-title1">Nutritions Facts for {{ predicted_class_info['name'].replace("_", " ") }}</h6>
+            <div class="container" style="padding-top: 100px;" id="nutrition1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/swimming.png);">
+                                <div class="num">
+                                    1
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Swimming {{ predicted_class_info['swimming_time'] }} mins</h5>
+                                <p class="card-text">Protein {{ predicted_class_info['protein'] }} g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/jogging.png);">
+                                <div class="num">
+                                    2
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Jogging {{ predicted_class_info['jogging_time'] }} mins</h5>
+                                <p class="card-text">Fats {{ predicted_class_info['fats'] }} g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/cycling.png);">
+                                <div class="num">
+                                    3
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Cycling {{ predicted_class_info['cycling_time'] }} mins</h5>
+                                <p class="card-text">Fiber {{ predicted_class_info['fiber'] }} g / 100 g</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col  fade-up">
+                        <div class="card border-0 bg-transparent h-100">
+                            <div class="proimg" style="background-image: url(../static/img/walk.png);">
+                                <div class="num">
+                                    4
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title pt-3 pb-3">Walking {{ predicted_class_info['walking_time']}} mins</h5>
+                                <p class="card-text">Carbs 1.1 g / 100 g</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </center>
+    </div>
+    <!--Procedure Section End-->
+
+    <!--Last Section Start-->
+    <div class="lastSection">
+        <center>
+            <div class="card text-center border-0 bg-transparent fade-up">
+                <div class="card-body">
+                    <h6 class="card-title lastSectiontitle">FINDING BALANCE IN FOOD, HEALTH AND WELLNESS</h6>
+                    <p class="card-text lastSectiontxt">Start Your Body Changing With Healthy Nutrition</p>
+                </div>
+            </div>
+        </center>
+
+    </div>
+    <!--Last Section End-->
+
+    <!--Footer Start-->
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container" style="padding: 30px ;">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 class="footertitle"><span style="color: #f3c600;">Healty</span>Center</h6>
+                    <p class="text-justify">Welcome to our health center, the ideal starting point for your journey to a
+                        healthier life. We are committed to providing you with comprehensive health solutions, from
+                        personalized nutrition consultations to professional fitness programs, as well as rehabilitation
+                        therapy and mental health support. Our team of professionals is dedicated to delivering the
+                        highest quality of service to you. Here, you'll find a warm community that supports you in
+                        achieving your health goals, whether it's weight loss, fitness improvement, or enhancing your
+                        overall quality of life. Let's embark on this journey to wellness together, injecting more
+                        vitality and happiness into your physical and mental well-being!</ad>
+                    </p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Weight Loss Program</a></li>
+                        <li><a href="#">Sports Schdule</a></li>
+                        <li><a href="#">Personalized Nutrition</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 class="footerotitle">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="BMI.html">BMI Calculator</a></li>
+                        <li><a href="#">Food Recongtion</a></li>
+                        <li><a href="#">Personalized Recipe</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved
+                        <a href="#" style="font-family: 'Parisienne', cursive;"></a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../static/js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+body{
+    background-color: rgb(245, 245, 245);
+}
+
+a {
+    color: #222529;
+    text-decoration: none;
+}
+/*Button*/
+.btnuser{
+    background-color: #ffd103;
+    border: 2px solid #ffd103;
+    transition: all .1s linear;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+.btnuser:hover{
+    background-color: #f3c600;
+    color: white;
+    border: 2px solid #f3c600;
+}
+
+/*Welcome Section and NavBar*/
+.navbar{
+    background: transparent!important;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0;
+}
+
+.navbar-brand{color: white; font-family: 'Bree Serif', serif; font-size: x-large;}
+.navbar-brand:hover{color: white;}
+.navlink{color: white; margin-left: 40px; font-size: 18px;font-family: 'Acme', sans-serif;}
+
+.healthywelcome{
+    height: 100vh;
+    min-height: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 0;
+}
+
+.healthywelcome .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .4;
+    background: rgb(0, 0, 0);
+    z-index: -1;
+}
+
+.healthywelcome .slider-text {
+    height: 100vh;
+    min-height: 750px;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+}
+
+.align-items-center {
+    /* 兼容旧版本的 WebKit 内核浏览器而添加的属性，用于设置项目在 Flexbox 容器中的垂直对齐方式为居中对齐。 */
+    /* !important 用于强制覆盖任何可能已经存在的其他样式规则。 */
+    -webkit-box-align: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+
+.rowuser {
+    /* css 自定义属性 */
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    /* 确保在不同的浏览器中都能正确地使用 Flexbox 布局。不同的浏览器使用不同的前缀来支持相同的 CSS 属性 */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 兼容旧版本的 Internet Explorer 浏览器 */
+    /* Flex 容器的项目在空间不足时应该换行 */
+    /* 这个属性的标准 CSS 格式为 flex-wrap: wrap;，但为了兼容旧版本的 Internet Explorer，需要添加 -ms- 前缀。 */
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+/*Welcome Section and NavBar*/
+
+
+/*Services Section*/
+
+.service-wrap{
+    margin-top: -60px;
+    position: relative;
+}
+.align-items-stretch {
+    -webkit-box-align: stretch !important;
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+}
+.align-items-stretch .services{
+    font-family: 'Acme', sans-serif;
+}
+.align-items-stretch .services:hover{
+    background-color: #ffd103;
+    color: white !important;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.services-wrap .services {
+    padding: 25px;
+}
+.services {
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    margin-bottom: 30px;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+    -moz-box-shadow: 0 5px 25px -2px rgba(0,0,0,.06);
+    box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+}
+.text-center {
+    text-align: center !important;
+    padding: 5px;
+}
+.services .icon {
+    margin-bottom: 8px;
+}
+.icon{
+    padding: 10px;
+}
+/*Services Section*/
+
+
+
+/*About Us Section*/
+.aboutusimg{
+    width: 500px; 
+    height: 500px;
+}
+.textdiv{
+    text-align: left; 
+    font-family: 'Acme', sans-serif;
+}
+#AboutUsHeader{font-size: 70px;}
+.listAboutUs{font-family: 'Acme', sans-serif;}
+
+.listAboutUs1{ display: inline-block;}
+.listAboutUs1 li{
+    cursor: pointer;
+}
+.listAboutUs2{ display: inline-block; margin-left: 40%;}
+
+.fade-up {
+    opacity: 0;
+    -webkit-transform: translateY(10%);
+    transition: translateY(10%);
+  transition: opacity 1s ease-in, -webkit-transform 700ms ease-in;
+  transition: opacity 1s ease-in, transform 700ms ease-in;
+  transition: opacity 1s ease-in, transform 700ms ease-in,
+    -webkit-transform 700ms ease-in;
+}
+  
+.fade-up.appear {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+/*About Us Section*/
+
+/*Our Services Section*/
+.serviceimg{
+    width: 100%;
+    /* height: 45%; */
+}
+.service-card{
+    
+    -webkit-box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+    -moz-box-shadow: 0 5px 25px -2px rgba(0,0,0,.06);
+    box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+    background-color: white;
+    transition: all .2s linear;
+}
+.service-card:hover{
+    background-color: #ffd103;
+    color: white;    
+    -webkit-box-shadow: 0 10px 30px -6px rgb(0, 0, 0,  0.548);
+    -moz-box-shadow: 0 10px 30px -6px rgba(0,0,0, 0.548);
+    box-shadow: 0 10px 30px -6px rgba(0, 0, 0, 0.548);
+}
+
+/* .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-start;
+} */
+.service-text
+{   
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    flex-grow: 1;
+    text-align: left;
+    line-height: 30px;
+    font-family: 'Acme', sans-serif;
+}
+.btn-service{
+    margin-top: auto; 
+    align-self: flex-end;
+    border: 2px solid #ffd103;
+    background-color: white;
+    color: #ffd103;
+    margin-bottom: 5px;
+}
+
+.service-text-bmi
+{   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-start;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    flex-grow: 1;
+    text-align: left;
+    line-height: 30px;
+    font-family: 'Acme', sans-serif;
+}
+.btn-service-bmi{
+    margin-top: auto; 
+    align-self: flex-end;
+    border: 2px solid #ffd103;
+    background-color: white;
+    color: #ffd103;
+    margin-bottom: 5px;
+}
+
+
+/*Our Services Section*/
+
+
+/*Make Appointment Section*/
+.divMakeAppoint{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/makeAppoint.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+.makeapprow{
+    padding: 75px;
+}
+.MakeAppTxt1{
+    color: #ffd103;
+}
+.MakeAppTxt2{
+    color: white;
+}
+
+/*Make Appointment Section*/
+
+
+/*Procedure Section*/
+.proimg{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 7px solid #fff;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.num{
+    width: 20px;
+    height: 20px;
+    background: #f3c600;
+    position: absolute;
+    border-radius: 50%;
+    padding-top: -2px;
+    color: white;
+}
+.btn-pro{
+    border: 1px solid #ffd103;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffd103;
+    margin-bottom: 5px;
+}
+.prodiv{
+    height: 800px; 
+    padding-top: 30px; 
+}
+.Proheader{padding-top: 50px;}
+.HowItWorksHeader{font-size: 60px;}
+
+/*Procedure Section*/
+
+
+/*Last Section*/
+.lastSection{
+    height: 600px;
+    background-image: linear-gradient(rgb(0,0,0,0.562),rgba(0, 0, 0, 0.562)) , url(../img/lastSection.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    font-family: 'Acme', sans-serif;
+}
+.lastSectiontitle{
+    padding-top: 70px;
+    color: #f3c600;
+}
+
+.lastSectiontxt{
+    color: white;
+    font-size: 100px;
+}
+
+.btnlastSection{
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    transition: all .1s linear;
+    color: #f3c600;
+    padding: 20px;
+    border-radius: 5px;
+    width: 167px;
+}
+.btnlastSection:hover{
+    background-color: #eee;
+    color: #f3c600;
+    border: 2px solid #eee;
+}
+
+/*Last Section*/
+
+
+/*Footer Section*/
+.footertitle{
+    color: white;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px;
+    font-family: 'Bree Serif', serif;
+}
+.site-footer
+{
+  background-color:#0f0f0f;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#fff;
+  
+  font-family: 'Acme', sans-serif;
+}
+.site-footer hr
+{
+  border-top-color:#f3c600;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer .footerotitle
+{
+  color:#f3c600;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#f3c600;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#fff
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#f3c600;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+/*Footer Section*/
+
+
+
+/*Monile View*/
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    /*About Us*/
+    #AboutUsHeader{font-size: 50px;}
+    .textdiv{
+        text-align: left; 
+        font-family: 'Acme', sans-serif;
+        font-size: small;
+    }
+    .aboutusimg{
+        width: 320px; 
+        height:320px;}
+    .listAboutUs1{ display: block;}
+    .listAboutUs2{ display: block; margin-left: 0%;}
+    /*About Us*/
+    /*Our  Services*/
+    .service-card{
+    
+        -webkit-box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+        -moz-box-shadow: 0 5px 25px -2px rgba(0,0,0,.06);
+        box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+        background-color: white;
+        transition: all .2s linear;
+        width: 100%;}
+    .service-big-card{width: 100%;}
+    .service-row-card{width: 350px;}
+    .service-container-card{width: 350px;}
+    /*Our  Services*/
+    /*Make Appointment*/
+    .MakeAppTxt1{
+        color: #ffd103;
+        font-size: small;
+    }
+    .MakeAppTxt2{
+        color: white;
+        font-size: medium;
+    }
+    .MakeAppTxtall{
+        display: inline-block;
+    }
+    .btnuser{
+        background-color: #ffd103;
+        border: 2px solid #ffd103;
+        transition: all .1s linear;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    /*Make Appointment*/
+    /*Our Procedure*/
+    .prodiv{
+        
+    height: 1000px; 
+    padding-top: 30px; 
+    font-family: 'Acme', sans-serif;
+    }
+    /*Our Procedure*/
+    /*Last Section*/
+    .lastSectiontitle{
+        padding-top: 20px;
+        color: #f3c600;
+    }
+    .lastSectiontxt{
+        color: white;
+        font-size: 50px;
+    }
+    
+    .btnlastSection{
+        background-color: #ffffff;
+        border: 2px solid #ffffff;
+        transition: all .1s linear;
+        color: #f3c600;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+  }
+  
+  @media only screen and (max-width: 653px) {
+    /* For mobile phones: */
+  }
+
+
+  .learn-more{
+    border: 2px solid #222529;
+    color: #737373;
+  }
+
+   .divAvocado{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/avocado-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+  .divBerry{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/berries-bg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+  .divBeef{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/beef-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+  .divBanana{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/banana-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+    .divBroccoil{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/broccoli-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+        .divCheese{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/cheese-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+.divCucumber{
+              width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/cucumber-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+    }
+
+ .divEgg{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/egg-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+        }
+
+.divFish{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/fish-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+        }
+
+.divNuts{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/Nuts-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+        }
+
+.divPotatoes{
+      width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/Potatoes-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+.divSoybean{
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.738) , rgba(0, 0, 0, 0.738)) , url(../img/Soybeans-divbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+}
+
+.left{
+    padding: 0 70px;
+}
+
+.box {
+    margin: 0 auto;
+    width: 30%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    /* backdrop-filter: blur(10px); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.5); */
+    /* border-left: 1px solid rgba(255, 255, 255, 0.5); */
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.box h2 {
+    font-family: 'Acme', sans-serif; font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type="text"], .box input[type="password"] {
+    font-family: 'Acme', sans-serif; font-size: 20px;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    /* border: 2px solid #3498db; */
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 16px;
+    border-bottom: 2px solid white;
+    border-left: 3px solid white;
+    border-right: 0.8px solid white;
+    border-top: 3.5px solid white;
+}
+
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10px auto 20px;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    border-left: 3px solid white;
+    border-right: 0.8px solid white;
+    border-top: 3.5px solid white;
+}
+
+.box ::placeholder{
+    color: white;
+}
+
+.bmi-recipe{
+    margin-top: 10px;
+}
+
+
